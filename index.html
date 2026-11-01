@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sabor Urbano · Cocina fusión contemporánea</title>
+<meta name="description" content="Cocina de autor con alma local. Reserva tu mesa en Sabor Urbano." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<script type="module" src="/src/main.js"></script>
+</head>
+<body>
+<header id="nav">
+  <a href="#inicio" class="logo">Sabor Urbano</a>
+  <button id="burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  <nav id="links">
+    <a href="#nosotros">Nosotros</a><a href="#menu">Menú</a><a href="#galeria">Galería</a>
+    <a href="#reservas">Reservas</a><a href="#contacto">Contacto</a>
+    <a href="#reservas" class="btn gold sm">Reserva tu mesa</a>
+  </nav>
+</header>
+
+<section id="inicio" class="hero">
+  <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1920&q=70" alt="Plato signature de Sabor Urbano" />
+  <div class="hero-in">
+    <h1>Donde la Tradición se Reinventa</h1>
+    <p>Cocina de autor con alma local</p>
+    <div class="cta"><a href="#reservas" class="btn gold">Reserva tu mesa</a><a href="#menu" class="btn outline">Ver menú</a></div>
+  </div>
+  <a href="#nosotros" class="scroll" aria-label="Bajar"><i></i></a>
+</section>
+
+<section id="nosotros" class="wrap about reveal">
+  <div>
+    <h2>Técnica europea, ingredientes de aquí</h2>
+    <p>Sabor Urbano nació de una idea simple: cocinar con la precisión de las escuelas europeas, pero con lo que da nuestra tierra. Cada plato parte de un productor local y termina en una técnica clásica.</p>
+    <p>Trabajamos con temporada, con proveedores a los que conocemos por su nombre y con una carta que cambia cuando cambia la cosecha.</p>
+    <p><strong>Nuestra filosofía:</strong> respetar el producto, reinventar la receta y que cada mesa se sienta como la de casa.</p>
+    <div class="chef"><img loading="lazy" src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=200&h=200&q=70" alt="Chef ejecutivo" /><div><b>[Nombre del chef]</b><span>Chef ejecutivo · [trayectoria]</span></div></div>
+    <ul class="stats"><li><b data-n="12">0</b>años de experiencia</li><li><b data-n="8">0</b>premios</li><li><b data-n="25000">0</b>clientes satisfechos</li></ul>
+  </div>
+  <img loading="lazy" class="tall" src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=900&q=70" alt="Interior del restaurante" />
+</section>
+
+<section id="menu" class="dark">
+  <div class="wrap reveal">
+    <h2>Nuestro menú</h2>
+    <div class="tabs" id="tabs" role="tablist"></div>
+    <ul class="dishes" id="dishes"></ul>
+    <p class="legend"><span class="tag">V</span> Vegetariano <span class="tag">P</span> Picante <span class="tag">SG</span> Sin gluten</p>
+    <a class="btn outline" href="/menu-sabor-urbano.pdf" download>Descargar menú completo (PDF)</a>
+    <h3>Platos del chef</h3>
+    <div class="picks" id="picks"></div>
+  </div>
+</section>
+
+<section id="galeria" class="wrap reveal">
+  <h2>Galería</h2>
+  <div class="masonry" id="gal"></div>
+</section>
+
+<section id="reservas" class="book">
+  <form id="form" class="card reveal" novalidate>
+    <h2>Reserva tu mesa</h2>
+    <div class="grid">
+      <label>Fecha<input type="date" name="fecha" required /></label>
+      <label>Hora<select name="hora" required><option value="">Elige una hora</option></select></label>
+      <label>Personas<input type="number" name="personas" min="1" max="12" value="2" required /></label>
+      <label>Nombre completo<input name="nombre" autocomplete="name" required /></label>
+      <label>Teléfono<input type="tel" name="tel" autocomplete="tel" required /></label>
+      <label>Email<input type="email" name="email" autocomplete="email" required /></label>
+    </div>
+    <label>Comentarios especiales (opcional)<textarea name="nota" rows="3"></textarea></label>
+    <p class="err" id="err" role="alert"></p>
+    <button class="btn gold big" type="submit">Confirmar reservación</button>
+    <a class="call" href="tel:+0000000000">o llama para reservar: [teléfono]</a>
+  </form>
+  <div id="ok" class="card ok" hidden><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M14 27l8 8 16-17"/></svg><h2>¡Reservación recibida!</h2><p id="okmsg"></p></div>
+</section>
+
+<section class="dark">
+  <div class="wrap reveal">
+    <h2>Lo que dicen nuestros clientes</h2>
+    <div class="car" id="car"></div>
+    <p class="src">Reseñas de ejemplo · <b>Google Reviews</b> / <b>TripAdvisor</b></p>
+    <a class="btn outline" href="#" target="_blank" rel="noopener">Déjanos tu reseña</a>
+  </div>
+</section>
+
+<section id="contacto" class="wrap contact reveal">
+  <div>
+    <h2>Visítanos</h2>
+    <p>📍 [Dirección], Centro</p>
+    <p>📞 <a href="tel:+0000000000">[Teléfono]</a></p>
+    <p>✉️ <a href="mailto:hola@saborurbano.com">hola@saborurbano.com</a></p>
+    <p><b>Almuerzo:</b> 12:00 – 15:30<br><b>Cena:</b> 19:00 – 23:00</p>
+    <p>🅿️ Estacionamiento: [indicar playa o calle cercana].</p>
+    <p class="soc"><a href="#">Instagram</a><a href="#">Facebook</a><a href="#">WhatsApp</a></p>
+  </div>
+  <iframe loading="lazy" title="Mapa" src="https://www.google.com/maps?q=centro&output=embed"></iframe>
+</section>
+
+<footer>
+  <div class="wrap fgrid">
+    <div><a href="#inicio" class="logo">Sabor Urbano</a><p>Cocina fusión contemporánea con alma local.</p></div>
+    <div><b>Enlaces</b><a href="#inicio">Inicio</a><a href="#menu">Menú</a><a href="#reservas">Reservaciones</a><a href="#contacto">Contacto</a></div>
+    <form id="news"><b>Recibe nuestras promociones especiales</b><input type="email" placeholder="tu@email.com" required aria-label="Email" /><button class="btn gold sm">Suscribirme</button><span id="nmsg"></span></form>
+  </div>
+  <div class="wrap bar"><span>© 2026 Sabor Urbano · Diseñado por [tu nombre]</span><span>Aceptamos: Efectivo · Visa · Mastercard · QR</span></div>
+</footer>
+
+<div id="lb" hidden><button aria-label="Cerrar">×</button><img alt="" /></div>
+</body>
+</html>
